@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"entidades","l":"Reserva"},{"p":"Servicios","l":"SistemaReservasDeportivas"}];updateSearchResults();
