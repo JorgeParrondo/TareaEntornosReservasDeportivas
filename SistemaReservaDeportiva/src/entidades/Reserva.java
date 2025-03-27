@@ -1,11 +1,13 @@
 package entidades;
 
+import java.time.LocalDateTime;
+
 /**
  * Representa una reserva de una pista en un sistema de reservas.
  */
 public class Reserva {
     private int idPista;
-    private String fecha;
+    private LocalDateTime fecha;
     private int duracion;
 
     /**
@@ -15,7 +17,7 @@ public class Reserva {
      * @param fecha Fecha de la reserva en formato "YYYY-MM-DD".
      * @param duracion Duración de la reserva en horas.
      */
-    public Reserva(int idPista, String fecha, int duracion) {
+    public Reserva(int idPista, LocalDateTime fecha, int duracion) {
         this.idPista = idPista;
         this.fecha = fecha;
         this.duracion = duracion;
@@ -35,7 +37,7 @@ public class Reserva {
      * 
      * @return La fecha de la reserva en formato "YYYY-MM-DD".
      */
-    public String getFecha() {
+    public LocalDateTime getFecha() {
         return fecha;
     }
 

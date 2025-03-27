@@ -2,6 +2,8 @@ package Servicios;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.time.LocalDateTime;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -33,17 +35,18 @@ class SistemaReservasDeportivasTest {
      */
     @Test
     void test() {
+    	LocalDateTime Fecha = LocalDateTime.now();
         // Se reserva la pista 1 para el 11 de abril de 2020 durante 60 minutos.
-        assertTrue(sistemaReservas.reservarPista(1, "11-04-2020", 60));
+        assertTrue(sistemaReservas.reservarPista(1, Fecha, 60));
         
         // Intento de reservar la misma pista 1 para el mismo día y hora, lo que debería fallar.
-        assertFalse(sistemaReservas.reservarPista(1, "11-04-2020", 60));
+        assertFalse(sistemaReservas.reservarPista(1, Fecha, 60));
         
         // Se reserva una pista diferente (pista 3) para el mismo día.
-        assertTrue(sistemaReservas.reservarPista(3, "11-04-2020", 60));
+        assertTrue(sistemaReservas.reservarPista(3, Fecha, 60));
         
         // Intento de reservar una pista fuera del rango válido (pista 10, que es mayor que el máximo permitido).
-        assertFalse(sistemaReservas.reservarPista(10, "11-04-2020", 60));
+        assertFalse(sistemaReservas.reservarPista(10, Fecha, 60));
     }
 }
 
